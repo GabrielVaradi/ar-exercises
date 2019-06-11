@@ -18,7 +18,10 @@ store6 = Store.create(name: "Yaletown", mens_apparel: true, womens_apparel: true
 puts store.name
 end
 
-@womens_stores = Store.where("annual_revenue < '1000000'", womens_apparel: true)
+# @womens_stores = Store.where("annual_revenue < '1000000'", womens_apparel: true)
+@womens_stores = Store.where({womens_apparel: true}, "annual_revenue < '1000000'")
+
+
 @womens_stores.map do |store|
 puts store.name
 end
