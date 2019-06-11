@@ -9,4 +9,15 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+puts "Add a store!"
+answer = gets.chomp
+
+store7 = Store.create(name: answer)
+puts store7.valid?
+puts store7.errors.messages
+
+
+
+
+
+
